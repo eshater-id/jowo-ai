@@ -1,0 +1,6 @@
+{
+  "name": "Jowo AI",
+  "description": "A premium AI-powered generator for high-quality images and videos with project history, metadata management, and secure cloud storage.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["AI Image Generation", "AI Video Generation", "Project Analytics", "Metadata Management"]
+}

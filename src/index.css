@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-neon-blue: #00f2ff;
+  --color-neon-deep-blue: #0066ff;
+  --color-premium-black: #050507;
+  --color-premium-gray: #0a0a0f;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+}
+
+@layer base {
+  body {
+    @apply bg-premium-black text-[#e2e8f0] antialiased selection:bg-neon-blue/30 overflow-hidden;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@utility glass {
+  background: rgba(20, 20, 25, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@utility glass-card {
+  @apply glass rounded-3xl p-8 transition-all duration-300;
+}
+
+@utility neon-blue {
+  color: var(--color-neon-blue);
+  text-shadow: 0 0 10px rgba(0, 242, 255, 0.4);
+}
+
+@utility neon-bg {
+  background: linear-gradient(135deg, var(--color-neon-blue), var(--color-neon-deep-blue));
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+@utility input-glass {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply rounded-xl px-4 py-3 text-white text-sm outline-none transition-all;
+
+  &:focus {
+    @apply border-neon-blue/40 bg-white/5;
+  }
+}
+
+@utility neo-button {
+  @apply relative px-6 py-3 rounded-xl font-bold transition-all duration-300 overflow-hidden flex items-center justify-center gap-2;
+  @apply neon-bg text-white hover:scale-[1.02] active:scale-[0.98];
+}
+
+@utility meta-label {
+  @apply text-[10px] uppercase font-bold tracking-widest text-slate-500 mb-2 block;
+}
